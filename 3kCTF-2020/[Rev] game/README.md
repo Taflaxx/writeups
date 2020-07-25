@@ -1,7 +1,10 @@
 # game
 ![](img/challenge.png)
+
 The challenge was reversing a unity game and there were 2 flags hidden in the game. 
 From the look of the game it was just a big maze, so I tried importing the level into Unity.
+
+
 I used [uTinyRipper](https://github.com/mafaca/UtinyRipper) to extract the files from the `CTF_Data/level0` file and imported those into unity.
 
 ![](img/maze.png)
@@ -104,7 +107,7 @@ public string DecryptString(string key)
     return result;
 }
 ```
-This function attempts to decrypt the `cipherText` but it seems like the Boxes have to be triggered in the right order. 
+This function attempts to decrypt the `cipherText` but it seems like the boxes have to be triggered in the right order. 
 
 I was able to extract the special colliders from Unity:
 
