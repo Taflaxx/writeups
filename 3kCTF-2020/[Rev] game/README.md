@@ -133,6 +133,12 @@ public class Program
 	{
 		CTF.Encrypt enc = new CTF.Encrypt();
 		string[] words = new string[] {"Hannibal", "Tanit", "Astarté", "Amilcar", "Melqart", "Dido"};
+		
+		/* DISCLAIMER: 
+		This could be done a lot cleaner and way more efficient as words can't appear twice in the key.
+		With this implementation there are up to 6^6 = 46656 combinations but it could be reduced to 6! = 720 combinations.
+		I just used it because it was easy to implement and I don't know C# very well.
+		*/
 		foreach (string word1 in words)
 		{
 			foreach (string word2 in words)
