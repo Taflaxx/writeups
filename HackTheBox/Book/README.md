@@ -134,7 +134,7 @@ After a bit of enumeration I found a suspicous service with [pspy](https://githu
 CMD: UID=0    PID=6108   | /usr/sbin/logrotate -f /root/log.cfg 
 CMD: UID=0    PID=6107   | /bin/sh /root/log.sh
 ```
-I checked if there were any known vulnerabilities and found [one that allowed for privilage escalation](https://github.com/whotwagner/logrotten/blob/master/logrotten.c)so I checked the 3 conditions.
+I checked if there were any known vulnerabilities and found [one that allowed for privilage escalation](https://github.com/whotwagner/logrotten/blob/master/logrotten.c) so I checked the 3 conditions.
 
 `Logrotate needs to be executed as root`: 
 
