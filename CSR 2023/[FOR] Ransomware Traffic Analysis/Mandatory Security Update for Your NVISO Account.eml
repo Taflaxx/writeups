@@ -1,0 +1,224 @@
+Received: from LO3P123MB3177.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:f8::16)
+ by CWXP123MB5930.GBRP123.PROD.OUTLOOK.COM with HTTPS; Thu, 25 May 2023
+ 13:04:49 +0000
+Received: from BN9PR03CA0767.namprd03.prod.outlook.com (2603:10b6:408:13a::22)
+ by LO3P123MB3177.GBRP123.PROD.OUTLOOK.COM (2603:10a6:600:f8::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6433.16; Thu, 25 May
+ 2023 13:04:49 +0000
+Received: from BL02EPF000145B8.namprd05.prod.outlook.com
+ (2603:10b6:408:13a:cafe::c5) by BN9PR03CA0767.outlook.office365.com
+ (2603:10b6:408:13a::22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6433.17 via Frontend
+ Transport; Thu, 25 May 2023 13:04:48 +0000
+Authentication-Results: spf=pass (sender IP is 209.85.167.65)
+ smtp.mailfrom=gmail.com; dkim=pass (signature was verified)
+ header.d=gmail.com;dmarc=pass action=none header.from=gmail.com;compauth=pass
+ reason=100
+Received-SPF: Pass (protection.outlook.com: domain of gmail.com designates
+ 209.85.167.65 as permitted sender) receiver=protection.outlook.com;
+ client-ip=209.85.167.65; helo=mail-lf1-f65.google.com; pr=C
+Received: from mail-lf1-f65.google.com (209.85.167.65) by
+ BL02EPF000145B8.mail.protection.outlook.com (10.167.241.208) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.6433.7 via Frontend Transport; Thu, 25 May 2023 13:04:48 +0000
+X-IncomingTopHeaderMarker:
+ OriginalChecksum:4564B4788931D9A6EC42701E8C1211042EDA715230BD02D781813970376EF0DE;UpperCasedChecksum:59CE32422C6EEC2253F810461375186BEB7DE511BD12E135D054DC9236AD6DC7;SizeAsReceived:2396;Count:13
+Received: by mail-lf1-f65.google.com with SMTP id 2adb3069b0e04-4f4bd608cf4so2520997e87.1
+        for <michaelbellingham2649@outlook.com>; Thu, 25 May 2023 06:04:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1685019887; x=1687611887;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=WQNzW8foIt/me6jt8YJjT430xjdhsRBfSqA+L4L5Wjo=;
+        b=YGpGatEbQrPHGMNQVnMDGo8d9ng2ksToqXwhIiSPo2aroFXoLub9WiIVLiXqZZuRGG
+         wH9cBb+AlH2AzJRqVgEqCCZi4eXyWFq17LJ/P52D6J0m1aNt+B/LnAF0UzppuHT4FX3L
+         TvNUp5YkahYk9pbmdA0c/EzMinbKs/dL7Hx07wSOH2D6ulwqdIjhUxAhgVViy8jAil+O
+         odHtt4ASeoszTKsghbxT38QscLLR4r9yKEaUMOibSsHqI4fiVDEtVt/m0FmKkZUdJGVj
+         B8hM3dEMc6O2snQPsq/aAG9IGrFnF6NT84hi8Mq7b55fbQBb+Iga88bvrhCvshalwO1b
+         1gyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1685019887; x=1687611887;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=WQNzW8foIt/me6jt8YJjT430xjdhsRBfSqA+L4L5Wjo=;
+        b=QTNWElDBjYS1iDu7J/k5pereBjk6yKERApTec6ZhRaO/6EiykWZbVlNsWo3l464JhR
+         mJ+HksZUdxaE1a3EsZwDMzzl/dEHZ0UF1zlv8mSwUlxvsGYayoDcB3suTmnkTQ+2nbZ0
+         D62bxAHbUrNXeVwdgQMmuC9iC/vPf+7773Oy+c4tXDZHxnfZbNeeUK2t9smQ61Ppxyoj
+         Q/iuOU/VYwXW4oLy+yf4mZ1XnbmxJbVxQnwJGcc8ILalB/cx2vgmA2pmoBjKlWT7yoIb
+         BTp1k4qXnYVoWp8F0hQIrnD+ES7yih1Jruyw4thV9Nh//L2xLiG23tTRI4rTdyp7DeU+
+         Bb1A==
+X-Gm-Message-State: AC+VfDy8BxV9WcYo9cfW/4o80jjSeV3UvUoCSNvhoW9R43CQOuMj8XWI
+	6hKqiUuBeRxXchwspb9JfaHd5kRfA/q4Y2rVIVO5V+yMmHVFunDmQvT2Rg==
+X-Google-Smtp-Source: ACHHUZ7eOOCjTQm35nUV2cUb5Yp++P/hjiSRYx4G+p7mu3bLiJqa0BfdIkJLMX5Tj1websKdgrRT+CVXGpwexmPZgbE=
+X-Received: by 2002:ac2:5510:0:b0:4f3:b32d:f739 with SMTP id
+ j16-20020ac25510000000b004f3b32df739mr5355258lfk.19.1685019887173; Thu, 25
+ May 2023 06:04:47 -0700 (PDT)
+From: Dixie Normous <gildartslol94@gmail.com>
+Date: Thu, 25 May 2023 15:04:35 +0200
+Message-ID: <CAKOPZT3DvO6_GkYykMT_Pe33ocTzuYJzcjTLOG6JfEe9zOPZwQ@mail.gmail.com>
+Subject: Mandatory Security Update for Your NVISO Account
+To: michaelbellingham2649@outlook.com
+Content-Type: multipart/alternative; boundary="000000000000d0844405fc844370"
+X-IncomingHeaderCount: 13
+Return-Path: gildartslol94@gmail.com
+X-MS-Exchange-Organization-ExpirationStartTime: 25 May 2023 13:04:48.9299
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 8d0e9529-6a3a-4e86-7c4a-08db5d209ee6
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic:
+ BL02EPF000145B8:EE_|LO3P123MB3177:EE_|CWXP123MB5930:EE_
+X-MS-Exchange-Organization-AuthSource:
+ BL02EPF000145B8.namprd05.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-UserLastLogonTime: 5/25/2023 1:02:44 PM
+X-MS-Office365-Filtering-Correlation-Id: 8d0e9529-6a3a-4e86-7c4a-08db5d209ee6
+X-MS-Exchange-EOPDirect: true
+X-Sender-IP: 209.85.167.65
+X-SID-PRA: GILDARTSLOL94@GMAIL.COM
+X-SID-Result: PASS
+X-MS-Exchange-Organization-PCL: 4
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 25 May 2023 13:04:48.8830
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8d0e9529-6a3a-4e86-7c4a-08db5d209ee6
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-AuthSource:
+ BL02EPF000145B8.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg:
+ 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: LO3P123MB3177
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:01.0271408
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.6433.015
+X-Microsoft-Antispam-Mailbox-Delivery:
+	abwl:0;wl:0;pcwl:0;kl:0;dwl:0;dkl:0;rwl:0;ucf:0;jmr:0;ex:0;auth:1;dest:I;ENG:(5062000305)(90000117)(90010023)(91010020)(91040095)(9050020)(9100338)(944500123)(4810010)(4910033)(8820095)(9575002)(10195002)(9320005);
+X-Message-Info:
+	qZelhIiYnPnsX/kmJTAAcdEzGQ4yI9EHHwlJdl4vUVyLnJwfVcUdRqu8KVJiW1DYAW1t8Nx8ULMHbM3rGdrXYMVr88Vh2vFAszFLdTjd7mfHplDHR7htP3pQPg6wK+yjzrLBYWg2+LI7DYTJoC/hWFZAiB/PEOfdgJ9xcZgFJW3+nm6TH3hYQlU+ojC3EbwJ9PjFRVXi/f2hrxjol+jOIg==
+X-Message-Delivery: Vj0xLjE7dXM9MDtsPTA7YT0wO0Q9MTtHRD0yO1NDTD0z
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?UUxPeEJmUFMvNjhBT0RiV3d0c0RQcGI4dU9EL21ISGhJTzBQNm91Szg1QjNm?=
+ =?utf-8?B?b01xUG5GVGlUaHFFQ040SUxXWUpjbXhCTDg2NW1JWWJ4RGd1eUZwRmhGemI3?=
+ =?utf-8?B?ZlRMRU0wTlRHQzcxbU0ycTZSQ3pkUlQrQmpPTnhJUVFGa1h0SlY2M3dPZHZV?=
+ =?utf-8?B?MTdua3gvMjE3V2FlSnp0clR0MjJyZ0dkNlFYemxlTVcrRDJWOTBKc3hWMG9R?=
+ =?utf-8?B?cnA1WVV4dlgrcForU3RKWEFrRXVYMmk1K05RSG4xMXpmaFhEV3JNOFVSc0tW?=
+ =?utf-8?B?Q29tc2E1V0hUdm5wK3FPSEQ4L05lSTYrcXMyb2JoOGZ5aWw5bEsySURDUjhE?=
+ =?utf-8?B?N25lQ3VJM3hVQmNZUTA5bnhiTnl6N01FNDZIazVBQ09hai8wZFBMR2V1ajVm?=
+ =?utf-8?B?bVlscUtmL2E0K0V1OHhXd0Z5eEVDelozZzVvMW51NXRhczRVdWI0MWRhTWJr?=
+ =?utf-8?B?RUppWnlScWNWekwxQ01LQklFeDk3UDVlTDlONXhIL2ZEYzZMQ1owQkpFMXNO?=
+ =?utf-8?B?NVRCMVNRU1o3NWp3bVVyTlc1REhqTFZrL1BrNkZFa1U4dXVRTWZOOWMrL3hC?=
+ =?utf-8?B?L0FsZkYyOTdHTVFuRTdnOXVLbm1semZsSUpzM094TW92dGsrbXZNQnV1d1A2?=
+ =?utf-8?B?NEFuY0c1OEdac204RlBNdkd0OWQrcm85WlZMTUdiUGFsSmxiZGtpREdrL1Fq?=
+ =?utf-8?B?d3JQK3cxMVczd3h6azJjVHZ0dTJmU3QzNk5Cd1piSzlpVXNlVlhpQnBQOXZS?=
+ =?utf-8?B?ZmdlSnFZWkp2Y2dQZkoxRzlTRmVqUVNDU3J6SDVhNjArMkM0S0lNZXByc1dx?=
+ =?utf-8?B?SCs1M0RiOThTWm9kRmMrSnErWTVLcjh2djRGQmZFVTJNU1NvNFRQRFdjb0xH?=
+ =?utf-8?B?WitNekxlejJUbktZNld1VEZ4cXozQzRaeFJkZmNrSlgxcDMzbTM5Nk9qaFBr?=
+ =?utf-8?B?Nkl1N0srZmJyalJxck1vT2ZNMHFRMStZRXV5azM3MG1SbHJvdEVmYU5ISjg0?=
+ =?utf-8?B?dStiVy8wTUJQVTM0SXlOaTBmVW80SHVJMjhKWjV2S1ZYVW9iR2c2UlRLVVF3?=
+ =?utf-8?B?OW1DMEg4UlN4L0lwTllScWZiUkNzZ1ZNMzdJTncxRVA4WlpGL3JGME9XcXZ0?=
+ =?utf-8?B?dWt6ZUJEYzZDYTRFK1hESC8vRVJpVStlL3NnYVlhRE4yb3E3cy9WZVJQV2la?=
+ =?utf-8?B?RXZueENxQWhGZEZhSTc1QUlYYlpXeXdrNThkOVZhN0RwWWZCSXhHNjd6cml3?=
+ =?utf-8?B?YVF5WU52U1BvOWR1RTBnTUhBUnJjT3BmMk9BMUplTFE5OFVaNlpyZHVPdkV2?=
+ =?utf-8?B?M1A2OGwzNWxSQXVZczl6aHlnYSswVnJSV08xc2UyNWxKdkpYSVpuOUhWdE1Q?=
+ =?utf-8?B?NDhEQUFlRlU2SzJsU3lMelFKUWxoMlpjUFFoVVB3SERYNU9LcHNNZjE0bUlL?=
+ =?utf-8?B?Tk1KaFAxZlphRzFOTXJxM00zL0RBancxcGdLcUhpeEROekJoUFVvb1BvWlNR?=
+ =?utf-8?B?b250dHA3TnlwanUycjRJSS9IT2Joc1lSZWx0OGlqRnFDbDJHZC9xcmsrdWt4?=
+ =?utf-8?B?ai9MWXRxSnJvbHJqMEZqTXdSdFVHNC9xNkIvRERtYWRjbTdBc3pKaUc2blB4?=
+ =?utf-8?B?bUhjaE9xZWpoMC9Cb2Q1UzdMdjBaN1c2WmNlV1RUamRhN0FFY0FNeVBZS0xJ?=
+ =?utf-8?B?YWs3MEZLMldpTzkwMkE3WEF2SDFoazFyWWI4RGtDWW93dHNQbXIrdzJScjhx?=
+ =?utf-8?B?Q2pBT0hrdFlsN0lPWFJLeVlTOGI2WTBkTWx4bjZSUUtycXV1T0RGLythQzJU?=
+ =?utf-8?Q?KA6YPfz3JsQqXLDTUaHTYgyBdumpyVVb7qZMs=3D?=
+MIME-Version: 1.0
+
+--000000000000d0844405fc844370
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Michael,
+
+We are the security team at NVISO, your trusted partner in online services.
+Our primary focus is ensuring the utmost protection of your personal data.
+Recently, we have implemented a mandatory security update in our system,
+and your cooperation is required.
+Our advanced security algorithms have detected some unusual activity
+associated with your NVISO account. To safeguard your account from
+unauthorized access, we kindly request you to verify your information by
+clicking on the following link:
+
+Link  <http://192.168.6.148/hostile1.exe>
+
+To maintain the integrity of your account, please complete this
+verification process within 24 hours. Failure to do so may result in a
+temporary suspension of your account as a precautionary measure. Rest
+assured, we adhere to strict confidentiality standards and will not share
+your personal information with any third parties.
+
+Should you have any inquiries or concerns, our dedicated customer support
+team is available round-the-clock to assist you. Don't hesitate to reach
+out for help.
+
+Your cooperation and commitment to account security are greatly
+appreciated. Thank you for your attention.
+
+Sincerely,
+
+The NVISO Security Team
+--
+
+--000000000000d0844405fc844370
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><d=
+iv dir=3D"ltr"><div dir=3D"ltr"><div class=3D"gmail-aju" style=3D"font-fami=
+ly:&quot;Google Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;fo=
+nt-size:medium"><div class=3D"gmail-aCi"><img id=3D"gmail-:c8_2-e" name=3D"=
+:c8" src=3D"https://lh3.googleusercontent.com/a/AAcHTteCQbuYOklCE5pfWRibDAu=
+guANztYXAqKHX7GA5=3Ds40-p-mo" class=3D"gmail-ajn" aria-hidden=3D"true" styl=
+e=3D"background-color: rgb(204, 204, 204);"></div></div><div class=3D"gmail=
+-gs" style=3D"margin:0px;padding:0px 0px 20px;width:1120px;font-family:&quo=
+t;Google Sans&quot;,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size=
+:medium"><div class=3D"gmail-gE gmail-iv gmail-gt" style=3D"cursor: auto;">=
+<table cellpadding=3D"0" class=3D"gmail-cf gmail-gJ"><tbody></tbody></table=
+></div><div id=3D"gmail-:wc"><div class=3D"gmail-qQVYZb"></div><div class=
+=3D"gmail-utdU2e"></div><div class=3D"gmail-btm"></div></div><div class=3D"=
+gmail-"><div class=3D"gmail-aHl"></div><div id=3D"gmail-:wp" tabindex=3D"-1=
+"></div><div id=3D"gmail-:we" class=3D"gmail-ii gmail-gt" style=3D"margin:8=
+px 0px 0px;padding:0px"><div id=3D"gmail-:wd" class=3D"gmail-a3s gmail-aiL"=
+><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr">Dear Michael,</div><div=
+ dir=3D"ltr"><br></div><div dir=3D"ltr">We are the security team at NVISO, =
+your trusted partner in online services. Our primary focus is ensuring the =
+utmost protection of your personal data. Recently, we have implemented a ma=
+ndatory security update in our system, and your cooperation is required.&nb=
+sp;</div><div dir=3D"ltr">Our advanced security algorithms have detected so=
+me unusual activity associated with your NVISO account. To safeguard your a=
+ccount from unauthorized access, we kindly request you to verify your infor=
+mation by clicking on the following link:</div><div dir=3D"ltr"><br></div><=
+div dir=3D"ltr"><a href=3D"http://192.168.6.148/hostile1.exe" target=3D"_bl=
+ank">Link&nbsp;</a></div><div dir=3D"ltr"><br></div><div dir=3D"ltr">To mai=
+ntain the integrity of your account, please complete this verification proc=
+ess within 24 hours. Failure to do so may result in a temporary suspension =
+of your account as a precautionary measure. Rest assured, we adhere to stri=
+ct confidentiality standards and will not share your personal information w=
+ith any third parties.</div><div dir=3D"ltr"><br></div><div dir=3D"ltr">Sho=
+uld you have any inquiries or concerns, our dedicated customer support team=
+ is available round-the-clock to assist you. Don't hesitate to reach out fo=
+r help.</div><div dir=3D"ltr"><br></div><div dir=3D"ltr">Your cooperation a=
+nd commitment to account security are greatly appreciated. Thank you for yo=
+ur attention.&nbsp;&nbsp;</div><div dir=3D"ltr"><br></div><div dir=3D"ltr">=
+Sincerely,&nbsp;&nbsp;</div><div dir=3D"ltr"><br></div><div dir=3D"ltr">The=
+ NVISO Security Team</div></div></div></div></div></div></div></div><span c=
+lass=3D"gmail_signature_prefix">-- </span><br><div dir=3D"ltr" class=3D"gma=
+il_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><img src=
+=3D"https://ci3.googleusercontent.com/mail-sig/AIorK4yF0siiu2z-YcXTU8Jd6S8h=
+selp-9S8b1XlRFh8WGa-Rq6BXMPbJmmGygfU1J8U07w2hpwmykc"><br></div></div></div>
+
+--000000000000d0844405fc844370--
